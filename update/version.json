@@ -1,12 +1,12 @@
 [
   {
-    id: 1,
-    version: "1.26.20",
-    d: "https://github.com/FlexI7Pro/AtlasBot/raw/refs/heads/master/update/atlasbot/1.26.20/atlasbot-android"
+    "id": 1,
+    "version": "1.26.20",
+    "d": "https://github.com/FlexI7Pro/AtlasBot/raw/refs/heads/master/update/atlasbot/1.26.20/atlasbot-android"
   },
   {
-    id: 2,
-    version: "1.26.30",
-    d: "https://github.com/FlexI7Pro/AtlasBot/raw/refs/heads/master/update/atlasbot/1.26.30/atlasbot-android"
+    "id": 2,
+    "version": "1.26.30",
+    "d": "https://github.com/FlexI7Pro/AtlasBot/raw/refs/heads/master/update/atlasbot/1.26.30/atlasbot-android"
   }
 ]
