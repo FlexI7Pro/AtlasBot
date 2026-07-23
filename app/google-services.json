@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "229760801420",
+    "project_id": "com-minecraftgo-atlasbot-755af",
+    "storage_bucket": "com-minecraftgo-atlasbot-755af.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229760801420:android:0192be6e862d4d0229f9a9",
+        "android_client_info": {
+          "package_name": "com.minecraftgo.atlasbot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaapBP1p8n_ohQ_tBw0mNitocrmrLr5z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
