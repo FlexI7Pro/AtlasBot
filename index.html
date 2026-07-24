@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlasbot - تنزيل</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script type="module" src="https://jspm.dev/@material/web/button/filled-button.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Google Sans', sans-serif;
+      background-color: #ffffff;
+      color: #1f1f1f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-top: 60px;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .capsule-badge {
+      background-color: #c4eed0;
+      color: #072711;
+      padding: 6px 24px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 56px;
+      font-weight: 700;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      direction: ltr;
+    }
+
+    .capsule-badge .material-symbols-outlined {
+      font-size: 44px;
+    }
+
+    .animated-text {
+      display: inline-block;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .download-btn-wrapper {
+      margin-bottom: 60px;
+    }
+
+    md-filled-button {
+      --md-filled-button-container-color: #1a73e8;
+      --md-filled-button-label-text-font: 'Google Sans', sans-serif;
+      --md-filled-button-label-text-size: 16px;
+      --md-filled-button-label-text-weight: 500;
+      --md-filled-button-container-shape: 100px;
+      height: 52px;
+      padding: 0 28px;
+      font-size: 16px;
+    }
+
+    .preview-container {
+      width: 100%;
+      max-width: 960px;
+      perspective: 1200px;
+      padding: 0 20px 80px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .preview-card {
+      width: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.08);
+      transform: rotateX(8deg) scale(0.98);
+      transform-origin: top center;
+      transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+      border: 1px solid #e0e0e0;
+      background: #fff;
+    }
+
+    .preview-card:hover {
+      transform: rotateX(0deg) scale(1);
+    }
+
+    .preview-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 40px;
+      }
+      .capsule-badge {
+        font-size: 36px;
+        padding: 4px 18px;
+      }
+      .capsule-badge .material-symbols-outlined {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img id="app-logo" src="" alt="Atlasbot" class="app-icon" />
+
+  <h1 class="hero-title">
+    استخدم بوتك الخاص ليكون
+    <span class="capsule-badge" id="badge">
+      <span class="material-symbols-outlined" id="badge-icon">smart_toy</span>
+      <span class="animated-text" id="badge-text">bot</span>
+    </span>
+  </h1>
+
+  <div class="download-btn-wrapper">
+    <md-filled-button id="download-btn">
+      <span class="material-symbols-outlined" slot="icon">download</span>
+      <span id="btn-text">تنزيل Atlasbot</span>
+    </md-filled-button>
+  </div>
+
+  <div class="preview-container">
+    <div class="preview-card">
+      <img id="app-preview-img" src="" alt="App Preview" />
+    </div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      downloadUrl: "https://example.com/downloads/atlasbot.apk",
+      version: "v1.0.0",
+      iconUrl: "https://i.ibb.co/p6kNpjhf/Gemini-Generated-Image-eyoylaeyoylaeyoy-removebg-preview-1.png",
+      previewImageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80"
+    };
+
+    document.getElementById('app-logo').src = CONFIG.iconUrl;
+    document.getElementById('app-preview-img').src = CONFIG.previewImageUrl;
+
+    const items = [
+      { text: "مناسب", icon: "smart_toy", bg: "#c4eed0", color: "#072711" },
+      { text: "مجاني", icon: "sell", bg: "#c7d8ff", color: "#001d35" },
+      { text: "24/7", icon: "schedule", bg: "#ffdad6", color: "#410002" }
+    ];
+
+    let currentIndex = 0;
+
+    const badge = document.getElementById('badge');
+    const badgeText = document.getElementById('badge-text');
+    const badgeIcon = document.getElementById('badge-icon');
+
+    function updateBadge() {
+      badgeText.classList.add('fade-out');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % items.length;
+        const current = items[currentIndex];
+
+        badgeText.textContent = current.text;
+        badgeIcon.textContent = current.icon;
+        badge.style.backgroundColor = current.bg;
+        badge.style.color = current.color;
+
+        badgeText.classList.remove('fade-out');
+        badgeText.classList.add('fade-in');
+
+        setTimeout(() => {
+          badgeText.classList.remove('fade-in');
+        }, 300);
+      }, 300);
+    }
+
+    setInterval(updateBadge, 2500);
+
+    const downloadBtn = document.getElementById('download-btn');
+    downloadBtn.addEventListener('click', () => {
+      window.location.href = CONFIG.downloadUrl;
+    });
+  </script>
+</body>
+</html>
